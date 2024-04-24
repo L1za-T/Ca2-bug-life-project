@@ -8,8 +8,11 @@
 
 using namespace std;
 class crawler: public bug{
+public:
+    crawler(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path);
 
-    void move() = 0;
+private:
+    virtual void move();
 };
 
 

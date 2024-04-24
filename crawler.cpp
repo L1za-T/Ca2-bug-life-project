@@ -3,4 +3,12 @@
 //
 
 #include "crawler.h"
-crawler::crawler()
+
+
+void crawler::move()
+{
+
+}
+
+crawler::crawler(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path) : bug(
+        id, position, size, alive, path) {}
