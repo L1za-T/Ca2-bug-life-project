@@ -1,0 +1,3 @@
+C:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug/CMakeFiles/bug_life_project.dir
+C:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
