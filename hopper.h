@@ -9,8 +9,12 @@
 using namespace std;
 class hopper: public bug{
 public:
-    hopper(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path);
+    hopper(int id, const pair<int, int> &position, int size, bool alive, int hopLength, const list<pair<int, int>> &path);
 
+    hopper(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path,
+           int hopLength);
+
+    int hopLength;
 private:
     virtual void move();
 };

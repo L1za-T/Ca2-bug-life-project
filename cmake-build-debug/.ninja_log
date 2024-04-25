@@ -1,0 +1,6 @@
+# ninja log v5
+130	2130	7357414705242399	CMakeFiles/bug_life_project.dir/crawler.cpp.obj	4ce378abb636d328
+138	2160	7357414705621389	CMakeFiles/bug_life_project.dir/bug.cpp.obj	9633ce79fcd6580e
+2133	2607	7357414709929870	CMakeFiles/bug_life_project.dir/hopper.cpp.obj	b19591baee44df74
+0	2608	7357414709989714	CMakeFiles/bug_life_project.dir/main.cpp.obj	f4662eaadde47c88
+2610	3327	7357414717300169	bug_life_project.exe	99a94b45b58d9f0f
