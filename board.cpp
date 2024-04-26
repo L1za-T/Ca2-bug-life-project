@@ -66,12 +66,14 @@ void board::parseLine(const string& strLine){
 
         if (type=="C") {
             auto *crawlerPtr = new crawler(id, xCoord, yCoord, static_cast<directions>(direction-1), size);
+            crawlerPtr->positionToPair(xCoord,yCoord);
             bugs.push_back(crawlerPtr);
 
         }else if (type== "H") {
             getline(strStream, strTemp, DELIMITER);
             hopLength = stoi(strTemp);
             auto *hopperPtr = new hopper( id, xCoord, yCoord, static_cast<directions>(direction-1), size, hopLength);
+            hopperPtr->positionToPair(xCoord, yCoord);
             bugs.push_back(hopperPtr);
         }
     }
@@ -81,15 +83,15 @@ void board::parseLine(const string& strLine){
     catch (std::out_of_range const& e){
         cout <<"Integer overflow: std::out_of_range thrown"<< '\n';
     }
-//    cout <<"Type:  "<< type << "id " << id <<"xCoord: "<< xCoord <<"yCoord: "<< yCoord <<"direction: " << direction<<"size: "<< size<< "hopLength: "<< hopLength<< endl;
+//    cout <<"Type:  "<< type << " id: " << id <<" xCoord: "<< xCoord <<" yCoord: "<< yCoord <<" direction: " << direction<< " size: "<< size << " hopLength: " << hopLength<< endl;
 
 }
 
-void board::displayAll()
-{
-    for(bug* b: bugs)
-    {
-        cout << b->getId()<<endl;
+void board::displayAll() {
+    for (bug *b: bugs) {
+        cout <<"Id: " << b->getId() <<" coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<")" <<" direction: " << b->getDir() << " size: "<< b->getSize() << " hopLength: :shrug:"<< endl;
+
+//        cout <<"Type:  "<< type << " id: " << id <<" xCoord: "<< xCoord <<" yCoord: "<< yCoord <<" direction: " << direction<< " size: "<< size << " hopLength: " << hopLength<< endl;
     }
 
 }

@@ -21,6 +21,8 @@ enum directions {North, East, South, West};
         list<pair<int,int>> path;
         directions dir;
 
+
+
     public:
 //        bug(){};
 
@@ -38,6 +40,10 @@ enum directions {North, East, South, West};
 
         void setPosition(const pair<int, int> &position);
 
+        void positionToPair(int xCoord, int yCoord){
+            position= make_pair(xCoord, yCoord);
+        }
+
         int getSize() const;
 
         void setSize(int size);
@@ -54,8 +60,9 @@ enum directions {North, East, South, West};
 
     void setDir(directions dir);
 
-
 };
+
+    //auto
  // std
 
 #endif //BUG_LIFE_PROJECT_BUG_H
