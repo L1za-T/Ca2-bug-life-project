@@ -9,18 +9,21 @@
 
 using namespace std;
 enum directions {North, East, South, West};
+
     class bug {
+        
     protected:
         int id;
         pair<int, int> position;
         int size;
         bool alive;
         list<pair<int,int>> path;
+        directions dir;
 
     public:
-        bug();
+//        bug(){};
 
-        bug(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path);
+        bug(int id, int xCoord, int yCoord, directions dir, int size, bool alive=true);
 
         virtual void move() =0;
 
@@ -46,7 +49,11 @@ enum directions {North, East, South, West};
 
         void setPath(const list<pair<int, int>> &path);
 
-    };
+    directions getDir() const;
+
+    void setDir(directions dir);
+
+};
 
  // std
 

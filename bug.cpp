@@ -4,15 +4,22 @@
 
 #include "bug.h"
 
-bug::bug(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path)
+bug::bug(int id, int x, int y, directions dir, int size, bool alive)
 : id(id),
-position(position),
+position(x, y),
 size(size),
-alive(alive),
-path(path) {}
+alive(alive){}
 
 int bug::getId() const {
     return id;
+}
+
+directions bug::getDir() const {
+    return dir;
+}
+
+void bug::setDir(directions dir) {
+    bug::dir = dir;
 }
 
 void bug::setId(int id) {

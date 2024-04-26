@@ -2,17 +2,28 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <vector>
+#include "bug.h"
+#include "crawler.h"
+#include "hopper.h"
+
 
 using namespace std;
 
 void outputFileStream();
-void parseLine(const string& strLine);
-void inputFileStream();
+void parseLine(const string& strLine,     vector<bug*> &bugs);
+void inputFileStream(vector<bug*> &bugs);
 
 
 int main() {
+    vector<bug*> bugs;
     outputFileStream();
-    inputFileStream();
+    inputFileStream(bugs);
+    cout << "loaded bugs" << endl;
+    for(bug* b: bugs)
+    {
+        cout << b->getId()<<endl;
+    }
     return 0;
 }
 
@@ -33,7 +44,7 @@ void outputFileStream(){
 }
 
 
-void inputFileStream()
+void inputFileStream(vector<bug*> &bugs)
 {
 
     ifstream inFileStream("bugs.txt");
@@ -42,7 +53,7 @@ void inputFileStream()
     {
         string line;
         while (getline(inFileStream, line)) {
-            parseLine(line);
+            parseLine(line, bugs);
         }
         inFileStream.close();
     }
@@ -51,16 +62,16 @@ void inputFileStream()
 
 }
 
-void parseLine(const string& strLine){
+void parseLine(const string& strLine,vector<bug*> &bugs){
 
     //turns line into string stream
     stringstream strStream( strLine );
 
 
-    const char DELIMITER = ';'; //sets delimiter
+    const char DELIMITER = ';';//sets delimiter
 
     //Fields gathered from bugs.txt
-    char *type;
+    string type;
     int id = 0;
     int xCoord = 0;
     int yCoord = 0;
@@ -68,12 +79,11 @@ void parseLine(const string& strLine){
     int size = 0;
     int hopLength = 0;
 
-    getline(strStream, type, DELIMITER);
 
     try {
         string strTemp;
         getline(strStream, strTemp, DELIMITER);
-        type = strTemp.data();
+        type = strTemp;
 
         getline(strStream, strTemp, DELIMITER);
         id = stoi(strTemp);
@@ -90,8 +100,20 @@ void parseLine(const string& strLine){
         getline(strStream, strTemp, DELIMITER);
         size = stoi(strTemp);
 
-        getline(strStream, strTemp, DELIMITER);
-        hopLength = stoi(strTemp);
+
+
+        if (type=="C") {
+
+            auto *crawlerPtr = new crawler(id, xCoord, yCoord, static_cast<directions>(direction-1), size);
+            bugs.push_back(crawlerPtr);
+        }
+
+       else if (type== "H") {
+            getline(strStream, strTemp, DELIMITER);
+            hopLength = stoi(strTemp);
+            auto *hopperPtr = new hopper( id, xCoord, yCoord, static_cast<directions>(direction-1), size, hopLength);
+            bugs.push_back(hopperPtr);
+        }
     }
     catch (std::invalid_argument const& e){
         cout <<"bad input: std::invalid_argument thrown"<< '\n';

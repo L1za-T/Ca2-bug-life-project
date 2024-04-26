@@ -10,5 +10,8 @@ void crawler::move()
 
 }
 
-crawler::crawler(int id, const pair<int, int> &position, int size, bool alive, const list<pair<int, int>> &path) : bug(
-        id, position, size, alive, path) {}
+crawler::crawler(int id, int xCoord, int yCoord, directions dir, int size)
+: bug(id, xCoord,yCoord,dir, size) {
+
+}
+
