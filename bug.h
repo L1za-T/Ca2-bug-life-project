@@ -6,6 +6,7 @@
 #define BUG_LIFE_PROJECT_BUG_H
 #include <utility>
 #include <list>
+#include <iostream>
 
 using namespace std;
 enum directions {North, East, South, West};
@@ -53,8 +54,8 @@ enum directions {North, East, South, West};
 
     void setDir(directions dir);
 
-};
 
+};
  // std
 
 #endif //BUG_LIFE_PROJECT_BUG_H
