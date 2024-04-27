@@ -102,6 +102,21 @@ void board::displayAll() {
 
 }
 
+void board::findABug(int bugId){
+    bool foundBug = 0;
+
+    for (bug *b: bugs) {
+        if(b->getId() == bugId){
+            cout <<"Id: " << b->getId() <<" Type: " << findType(b) <<" Coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<") Direction: " << b->directionToString(b->getDir()) << " Size: "<< b->getSize() << " Hop Length: " << findHopLength(b) << " Status: " << status(b) << endl;
+            foundBug = 1;
+        }
+    }
+    if (foundBug ==0){
+        cout <<"Bug: "<< bugId << " not found" << endl;
+    }
+
+}
+
 string board::findHopLength(bug *b){
     if(const hopper* hopper = dynamic_cast<const class hopper*>(b)){
         return to_string(hopper->gethopLength());

@@ -25,6 +25,8 @@ public:
     string status(bug *b);
 
     string findType(bug *b);
+
+    void findABug(int choice);
 };
 
 

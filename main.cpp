@@ -35,8 +35,13 @@ int main() {
 
             cin >> choice;
 
-             if(choice == 1){
+             if(choice == 1) {
                  newBoard.displayAll();
+             } else if (choice == 2){
+                 cout << "Please enter the id you wish to find: "<<endl;
+                 cin>> choice;
+                 newBoard.findABug(choice);
+
              } else if (choice == 0){
                  outputFileStream();
                  break;
