@@ -7,8 +7,10 @@
 bug::bug(int id, int x, int y, directions dir, int size, bool alive)
 : id(id),
 position(x, y),
+dir(dir),
 size(size),
 alive(alive){}
+
 
 int bug::getId() const {
     return id;
@@ -40,6 +42,10 @@ int bug::getSize() const {
 
 void bug::setSize(int size) {
     bug::size = size;
+}
+
+string bug::getType() {
+    return type;
 }
 
 bool bug::isAlive() const {

@@ -11,8 +11,14 @@ class crawler: public bug{
 public:
     crawler(int id, int xCoord, int yCoord, directions dir, int size);
 
+    string getType(){
+        return type;
+    };
+
 private:
     virtual void move();
+
+    string type = "Crawler";
 };
 
 

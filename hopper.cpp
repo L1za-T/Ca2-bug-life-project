@@ -17,9 +17,11 @@ hopper::hopper(int id, int xCoord, int yCoord, directions dir, int size, int hop
 
 }
 
-int hopper::gethopLength() const {
-    return this->hopLength;
-}
+//int hopper::gethopLength() const {
+//    return this->hopLength;
+//}
+
+
 
 //int hopper::hopLength() const {
 //    return 0;

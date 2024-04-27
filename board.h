@@ -20,6 +20,7 @@ public:
     void inputFileStream();
     void displayAll();
 
+    string findHopLength(bug *b);
 };
 
 

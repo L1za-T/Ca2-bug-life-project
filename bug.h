@@ -14,6 +14,7 @@ enum directions {North, East, South, West};
     class bug {
         
     protected:
+        string type;
         int id;
         pair<int, int> position;
         int size;
@@ -49,6 +50,8 @@ enum directions {North, East, South, West};
         void setSize(int size);
 
         bool isAlive() const;
+
+        string getType();
 
         void setAlive(bool alive);
 

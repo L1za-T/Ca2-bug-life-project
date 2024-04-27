@@ -1,19 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
-#include "bug.h"
-#include "crawler.h"
-#include "hopper.h"
 #include "board.h"
 
 
 using namespace std;
 
 void outputFileStream();
-void parseLine(const string& strLine,     vector<bug*> &bugs);
-void inputFileStream(vector<bug*> &bugs);
 
 
 int main() {

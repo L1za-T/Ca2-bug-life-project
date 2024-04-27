@@ -69,12 +69,17 @@ void board::parseLine(const string& strLine){
             crawlerPtr->positionToPair(xCoord,yCoord);
             bugs.push_back(crawlerPtr);
 
+            cout <<"Crawler: " << crawlerPtr->getType() << " ID: " << crawlerPtr->getId() << " Direction: " << crawlerPtr->getDir() << endl;
+
         }else if (type== "H") {
             getline(strStream, strTemp, DELIMITER);
             hopLength = stoi(strTemp);
             auto *hopperPtr = new hopper( id, xCoord, yCoord, static_cast<directions>(direction-1), size, hopLength);
             hopperPtr->positionToPair(xCoord, yCoord);
             bugs.push_back(hopperPtr);
+
+            cout <<"Type: "<< hopperPtr->getType() << " ID: " << hopperPtr->getId() << " Direction: " << hopperPtr->getDir() << endl;
+
         }
     }
     catch (std::invalid_argument const& e){
@@ -89,9 +94,17 @@ void board::parseLine(const string& strLine){
 
 void board::displayAll() {
     for (bug *b: bugs) {
+
         cout <<"Id: " << b->getId() <<" coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<")" <<" direction: " << b->getDir() << " size: "<< b->getSize() << " hopLength: :shrug:"<< endl;
 
-//        cout <<"Type:  "<< type << " id: " << id <<" xCoord: "<< xCoord <<" yCoord: "<< yCoord <<" direction: " << direction<< " size: "<< size << " hopLength: " << hopLength<< endl;
+
     }
 
+}
+
+string board::findHopLength(bug *b){
+    if(b->getType() == "Hopper"){
+        cout<< findHopLength(b)   <<endl;
+    };
+    return "N/A";
 }
