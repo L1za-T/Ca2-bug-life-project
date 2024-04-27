@@ -45,6 +45,17 @@ enum directions {North, East, South, West};
             position= make_pair(xCoord, yCoord);
         }
 
+        string directionToString(directions dir) {
+
+            switch (dir) {
+                case 0: return "North";
+                case 1: return "East";
+                case 2: return "South";
+                case 3: return "West";
+            }
+            
+        }
+
         int getSize() const;
 
         void setSize(int size);

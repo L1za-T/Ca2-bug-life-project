@@ -69,7 +69,7 @@ void board::parseLine(const string& strLine){
             crawlerPtr->positionToPair(xCoord,yCoord);
             bugs.push_back(crawlerPtr);
 
-            cout <<"Crawler: " << crawlerPtr->getType() << " ID: " << crawlerPtr->getId() << " Direction: " << crawlerPtr->getDir() << endl;
+//            cout <<"Crawler: " << crawlerPtr->getType() << " ID: " << crawlerPtr->getId() << " Direction: " << crawlerPtr->getDir() << endl;
 
         }else if (type== "H") {
             getline(strStream, strTemp, DELIMITER);
@@ -78,7 +78,7 @@ void board::parseLine(const string& strLine){
             hopperPtr->positionToPair(xCoord, yCoord);
             bugs.push_back(hopperPtr);
 
-            cout <<"Type: "<< hopperPtr->getType() << " ID: " << hopperPtr->getId() << " Direction: " << hopperPtr->getDir() << endl;
+//            cout <<"Type: "<< hopperPtr->getType() << " ID: " << hopperPtr->getId() << " Direction: " << hopperPtr->directionToString(hopperPtr->getDir()) << " Hop Length: " << hopperPtr->gethopLength() << endl;
 
         }
     }
@@ -95,7 +95,7 @@ void board::parseLine(const string& strLine){
 void board::displayAll() {
     for (bug *b: bugs) {
 
-        cout <<"Id: " << b->getId() <<" coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<")" <<" direction: " << b->getDir() << " size: "<< b->getSize() << " hopLength: :shrug:"<< endl;
+        cout <<"Id: " << b->getId() <<" Type: " << findType(b) <<" Coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<") Direction: " << b->directionToString(b->getDir()) << " Size: "<< b->getSize() << " Hop Length: " << findHopLength(b) << " Status: " << status(b) << endl;
 
 
     }
@@ -103,8 +103,24 @@ void board::displayAll() {
 }
 
 string board::findHopLength(bug *b){
-    if(b->getType() == "Hopper"){
-        cout<< findHopLength(b)   <<endl;
+    if(const hopper* hopper = dynamic_cast<const class hopper*>(b)){
+        return to_string(hopper->gethopLength());
     };
     return "N/A";
+}
+
+string board::findType(bug *b){
+    if(const hopper* hopper = dynamic_cast<const class hopper*>(b)){
+        return "Hopper";
+    } else if(const crawler* crawler = dynamic_cast<const class crawler*>(b)){
+        return "Crawler";
+    }
+    return "N/A";
+}
+
+string board::status(bug *b){
+    if(b->isAlive() == 1){
+        return "Alive";
+    };
+    return "Dead";
 }

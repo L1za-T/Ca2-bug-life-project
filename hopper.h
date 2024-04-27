@@ -11,9 +11,12 @@ class hopper: public bug{
 public:
     hopper(int id, int xCoord, int yCoord, directions dir, int size, int hopLength);
 
+    void sethopLength(int hopLength);
+
     int gethopLength() const{
         return hopLength;
     };
+
 
     string getType() {
         return type;

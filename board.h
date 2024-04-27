@@ -21,6 +21,10 @@ public:
     void displayAll();
 
     string findHopLength(bug *b);
+
+    string status(bug *b);
+
+    string findType(bug *b);
 };
 
 
