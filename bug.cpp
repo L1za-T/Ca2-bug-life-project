@@ -66,5 +66,17 @@ void bug::setPath(const list<pair<int, int>> &path) {
 
 bool bug::isWayBlocked()
 {
-
+    if(position.second <= 0 || dir == 3){
+        return true;
+    }
+    if(position.second >= 9 || dir == 1){
+        return true;
+    }
+    if(position.first <= 0 || dir == 0){
+        return true;
+    }
+    if(position.first >= 9 || dir == 2){
+        return true;
+    }
+    return false;
 }
