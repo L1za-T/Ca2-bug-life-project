@@ -24,6 +24,7 @@ void crawler::move()
         if(dir == 3){
             position.first = position.first +1;
         }
+        updatePath();
     }
 }
 

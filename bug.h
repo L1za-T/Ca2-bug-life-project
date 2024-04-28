@@ -75,6 +75,7 @@ enum directions {North, East, South, West};
 
     void setDir(directions dir);
 
+    void updatePath();
 };
 
     //auto

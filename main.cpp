@@ -42,7 +42,10 @@ int main() {
                  cin>> choice;
                  newBoard.findABug(choice);
 
-             } else if (choice == 0){
+             }else if(choice == 3 ){
+                 newBoard.tapBoard();
+
+             }else if (choice == 0){
                  outputFileStream();
                  break;
              }

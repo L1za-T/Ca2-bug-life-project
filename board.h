@@ -27,6 +27,8 @@ public:
     string findType(bug *b);
 
     void findABug(int choice);
+
+    void tapBoard();
 };
 
 

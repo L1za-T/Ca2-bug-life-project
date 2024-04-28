@@ -67,7 +67,6 @@ void board::parseLine(const string& strLine){
         if (type=="C") {
             auto *crawlerPtr = new crawler(id, xCoord, yCoord, static_cast<directions>(direction-1), size);
             crawlerPtr->positionToPair(xCoord,yCoord);
-            crawlerPtr->
             bugs.push_back(crawlerPtr);
 
 //            cout <<"Crawler: " << crawlerPtr->getType() << " ID: " << crawlerPtr->getId() << " Direction: " << crawlerPtr->getDir() << endl;
@@ -116,6 +115,13 @@ void board::findABug(int bugId){
         cout <<"Bug: "<< bugId << " not found" << endl;
     }
 
+}
+
+void board::tapBoard(){
+    for(bug *b: bugs){
+            b->move();
+            cout << "("<< b->getPath().back().first << "," << b->getPath().back().second << ")"<< endl;
+    }
 }
 
 string board::findHopLength(bug *b){

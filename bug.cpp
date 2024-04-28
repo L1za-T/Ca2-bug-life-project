@@ -66,6 +66,10 @@ void bug::setPath(const list<pair<int, int>> &path) {
     bug::path = path;
 }
 
+void bug::updatePath(){
+    path.push_back(position);
+}
+
 //void bug::pushToPath(pair<int, int>){
 //
 //}
