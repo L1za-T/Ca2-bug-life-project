@@ -67,6 +67,7 @@ void board::parseLine(const string& strLine){
         if (type=="C") {
             auto *crawlerPtr = new crawler(id, xCoord, yCoord, static_cast<directions>(direction-1), size);
             crawlerPtr->positionToPair(xCoord,yCoord);
+            crawlerPtr->
             bugs.push_back(crawlerPtr);
 
 //            cout <<"Crawler: " << crawlerPtr->getType() << " ID: " << crawlerPtr->getId() << " Direction: " << crawlerPtr->getDir() << endl;

@@ -29,6 +29,7 @@ enum directions {North, East, South, West};
 
         bug(int id, int xCoord, int yCoord, directions dir, int size, bool alive=true);
 
+
         virtual void move() =0;
 
         bool isWayBlocked();

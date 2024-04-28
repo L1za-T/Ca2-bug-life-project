@@ -9,7 +9,9 @@ bug::bug(int id, int x, int y, directions dir, int size, bool alive)
 position(x, y),
 dir(dir),
 size(size),
-alive(alive){}
+alive(alive){
+    this->path.push_back(position);
+}
 
 
 int bug::getId() const {
@@ -63,6 +65,10 @@ const list<pair<int, int>> &bug::getPath() const {
 void bug::setPath(const list<pair<int, int>> &path) {
     bug::path = path;
 }
+
+//void bug::pushToPath(pair<int, int>){
+//
+//}
 
 bool bug::isWayBlocked()
 {
