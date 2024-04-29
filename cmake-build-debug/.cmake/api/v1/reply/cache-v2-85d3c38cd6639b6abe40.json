@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug"
+			"value" : "c:/Users/L1za/Documents/C++/Pavlovas_Linas_CA3/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/L1za/Documents/C++/Pavlovas_Linas_CA3/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/L1za/Documents/C++/bug_life_project"
+			"value" : "C:/Users/L1za/Documents/C++/Pavlovas_Linas_CA3"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/L1za/Documents/C++/bug_life_project/cmake-build-debug"
+			"value" : "C:/Users/L1za/Documents/C++/Pavlovas_Linas_CA3/cmake-build-debug"
 		},
 		{
 			"name" : "bug_life_project_IS_TOP_LEVEL",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/L1za/Documents/C++/bug_life_project"
+			"value" : "C:/Users/L1za/Documents/C++/Pavlovas_Linas_CA3"
 		}
 	],
 	"kind" : "cache",
