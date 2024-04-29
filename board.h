@@ -29,6 +29,8 @@ public:
     void findABug(int choice);
 
     void tapBoard();
+
+    void displayLifeHistory(ostream &out);
 };
 
 

@@ -45,6 +45,9 @@ int main() {
              }else if(choice == 3 ){
                  newBoard.tapBoard();
 
+             }else if(choice == 4 ){
+                 newBoard.displayLifeHistory(std::cout);
+
              }else if (choice == 0){
                  outputFileStream(newBoard);
                  break;
@@ -61,7 +64,7 @@ void outputFileStream(board &b){
     if (outFileStream.good() )
     {
 
-        b.displayAll(outFileStream);
+        b.displayLifeHistory(outFileStream);
 
         outFileStream.close();
         cout <<"File has been written"<< endl;

@@ -94,12 +94,8 @@ void board::parseLine(const string& strLine){
 
 void board::displayAll(ostream& out) {
     for (bug *b: bugs) {
-
         out <<"Id: " << b->getId() <<" Type: " << findType(b) <<" Coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<") Direction: " << b->directionToString(b->getDir()) << " Size: "<< b->getSize() << " Hop Length: " << findHopLength(b) << " Status: " << status(b) << endl;
-
-
     }
-
 }
 
 void board::findABug(int bugId){
@@ -121,6 +117,22 @@ void board::tapBoard(){
     for(bug *b: bugs){
             b->move();
 //            cout << "Id: " << b->getId() << "("<< b->getPath().back().first << "," << b->getPath().back().second << ")"<<" Direction: " << b->directionToString(b->getDir()) << endl;
+    }
+}
+
+void board::displayLifeHistory(ostream& out) {
+
+    for (bug *b: bugs) {
+
+        string pathList;
+        const list<pair<int,int>>&path = b->getPath();
+
+        for (auto i = path.begin(); i != path.end(); ++i){
+            pathList = pathList + "(" + to_string(i->first) + "," + to_string(i->second) + ")";
+        }
+
+        out <<"Id: " << b->getId() <<" Type: " << findType(b) << " Path History: " << pathList << " Status: " << status(b)  << endl;
+
     }
 }
 
