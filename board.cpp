@@ -120,7 +120,7 @@ void board::findABug(int bugId){
 void board::tapBoard(){
     for(bug *b: bugs){
             b->move();
-            cout << "("<< b->getPath().back().first << "," << b->getPath().back().second << ")"<< endl;
+//            cout << "Id: " << b->getId() << "("<< b->getPath().back().first << "," << b->getPath().back().second << ")"<<" Direction: " << b->directionToString(b->getDir()) << endl;
     }
 }
 

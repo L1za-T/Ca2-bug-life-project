@@ -74,18 +74,19 @@ void bug::updatePath(){
 //
 //}
 
+
 bool bug::isWayBlocked()
 {
-    if(position.second-1  >= 0 && dir == 3){
+    if(position.second-1 < 0 && dir == 0){ //  North
         return true;
     }
-    if(position.second+1 <= 9 && dir == 1){
+    if(position.second+1 >9 && dir == 2){ //   South
         return true;
     }
-    if(position.first-1 >= 0 && dir == 0){
+    if(position.first+1 > 9 && dir == 1){ //  East
         return true;
     }
-    if(position.first+1 <= 9 && dir == 2){
+    if(position.first-1 < 0 && dir == 3){ //  West
         return true;
     }
     return false;
