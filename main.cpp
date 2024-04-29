@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void outputFileStream();
+void outputFileStream(board& newboard);
 
 
 int main() {
@@ -36,7 +36,7 @@ int main() {
             cin >> choice;
 
              if(choice == 1) {
-                 newBoard.displayAll();
+                 newBoard.displayAll(std::cout);
              } else if (choice == 2){
                  cout << "Please enter the id you wish to find: "<<endl;
                  cin>> choice;
@@ -46,7 +46,7 @@ int main() {
                  newBoard.tapBoard();
 
              }else if (choice == 0){
-                 outputFileStream();
+                 outputFileStream(newBoard);
                  break;
              }
 
@@ -55,12 +55,13 @@ int main() {
     return 0;
 }
 
-void outputFileStream(){
+void outputFileStream(board &b){
     ofstream outFileStream("bugs_life_history_date_time.out"); //bug history file
 
     if (outFileStream.good() )
     {
-        outFileStream <<"testWrite?";
+
+        b.displayAll(outFileStream);
 
         outFileStream.close();
         cout <<"File has been written"<< endl;

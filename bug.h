@@ -32,7 +32,7 @@ enum directions {North, East, South, West};
 
         virtual void move() =0;
 
-        bool isWayBlocked();
+        virtual bool isWayBlocked();
 
         int getId() const;
 

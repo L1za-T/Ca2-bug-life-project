@@ -18,7 +18,7 @@ public:
 
     void parseLine(const string& strLine);
     void inputFileStream();
-    void displayAll();
+    void displayAll(ostream& out);
 
     string findHopLength(bug *b);
 

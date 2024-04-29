@@ -22,6 +22,22 @@ void hopper::sethopLength(int hopLength) {
     hopper::hopLength = hopLength;
 }
 
+bool hopper::isWayBlocked() {
+    if(position.second-hopLength >= 0 && dir == 3){
+        return true;
+    }
+    if(position.second+hopLength <= 9 && dir == 1){
+        return true;
+    }
+    if(position.first-hopLength >= 0 && dir == 0){
+        return true;
+    }
+    if(position.first+hopLength <= 9 && dir == 2){
+        return true;
+    }
+    return false;
+}
+
 //int hopper::gethopLength() const {
 //    return hopLength;
 //}

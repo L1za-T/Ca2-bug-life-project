@@ -16,7 +16,7 @@ public:
     };
 
 private:
-    virtual void move();
+    virtual void move() override;
 
     string type = "Crawler";
 };

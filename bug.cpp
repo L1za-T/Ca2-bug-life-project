@@ -76,16 +76,16 @@ void bug::updatePath(){
 
 bool bug::isWayBlocked()
 {
-    if(position.second <= 0 || dir == 3){
+    if(position.second-1  >= 0 && dir == 3){
         return true;
     }
-    if(position.second >= 9 || dir == 1){
+    if(position.second+1 <= 9 && dir == 1){
         return true;
     }
-    if(position.first <= 0 || dir == 0){
+    if(position.first-1 >= 0 && dir == 0){
         return true;
     }
-    if(position.first >= 9 || dir == 2){
+    if(position.first+1 <= 9 && dir == 2){
         return true;
     }
     return false;

@@ -18,6 +18,8 @@ public:
     };
 
 
+    bool isWayBlocked() override;
+
     string getType() {
         return type;
     };

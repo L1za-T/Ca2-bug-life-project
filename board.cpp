@@ -92,10 +92,10 @@ void board::parseLine(const string& strLine){
 
 }
 
-void board::displayAll() {
+void board::displayAll(ostream& out) {
     for (bug *b: bugs) {
 
-        cout <<"Id: " << b->getId() <<" Type: " << findType(b) <<" Coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<") Direction: " << b->directionToString(b->getDir()) << " Size: "<< b->getSize() << " Hop Length: " << findHopLength(b) << " Status: " << status(b) << endl;
+        out <<"Id: " << b->getId() <<" Type: " << findType(b) <<" Coordinates: (" << b->getPosition().first <<","<< b->getPosition().second <<") Direction: " << b->directionToString(b->getDir()) << " Size: "<< b->getSize() << " Hop Length: " << findHopLength(b) << " Status: " << status(b) << endl;
 
 
     }
